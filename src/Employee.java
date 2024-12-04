@@ -25,10 +25,10 @@ public class Employee{
     public void attendance(boolean a) {
     	if(a) {
     		attendance=true;
-    		System.out.println("Employee is present");
+    		System.out.println(this.name+" is present");
     	}
     	else {
-    		System.out.println("Employee is absent");
+    		System.out.println(this.name+" is absent");
     	}
     }
 }
