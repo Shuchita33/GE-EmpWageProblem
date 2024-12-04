@@ -14,7 +14,8 @@ public class Main {
     		default-> e1.attendance(false);
     		
     	}
-    	e1.normalWorkDay=8;
+    	e1.normalWorkDay=4; //part-time employee wage is set to 4
+    	System.out.println("For Part-time: ");
     	e1.calculateWage();
     }
 }
