@@ -12,15 +12,16 @@ public class Employee{
 		this.id=id;
 	}
 	
-	public void calculateWage(){
+	public int calculateWage(){
 		int dailySalary=0;
 		if(attendance) {
 			dailySalary=normalWorkDay*salPerHour;
-			System.out.println("\nDaily Wage is: "+dailySalary);
+			//System.out.println("\nDaily Wage is: "+dailySalary);
 		}
 		else {
-			System.out.println("\nEmployee absent, wage is 0");
+			//System.out.println("\nEmployee absent, wage is 0");
 		}
+		return dailySalary;
 	}
     public void attendance(boolean a) {
     	if(a) {
