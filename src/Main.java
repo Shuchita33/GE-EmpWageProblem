@@ -12,6 +12,9 @@ public class Main {
     	switch(i) {
     		case 1-> e1.attendance(true);
     		default-> e1.attendance(false);
+    		
     	}
+    	e1.normalWorkDay=8;
+    	e1.calculateWage();
     }
 }
