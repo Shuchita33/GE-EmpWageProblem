@@ -16,10 +16,10 @@ public class Employee{
 		int dailySalary=0;
 		if(attendance) {
 			dailySalary=normalWorkDay*salPerHour;
-			System.out.println("Daily Wage is: "+dailySalary);
+			System.out.println("\nDaily Wage is: "+dailySalary);
 		}
 		else {
-			System.out.println("Employee absent, wage is 0");
+			System.out.println("\nEmployee absent, wage is 0");
 		}
 	}
     public void attendance(boolean a) {

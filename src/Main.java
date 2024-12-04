@@ -1,27 +1,33 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         //System.out.println("Hello and Welcome to Employee Wage Computation Program");
+    	Scanner sc = new Scanner(System.in);
     	
-    	Employee e1=new Employee("Ram",123);
+    	System.out.println("Enter Employee Name:");
+        String name = sc.nextLine();
+        System.out.println("Enter Employee ID:");
+        int id = sc.nextInt();   	
     	
-    	Random r=new Random();
-    	int i=(r.nextInt(1000))%2;
+    	Employee e = new Employee(name, id);
     	
-    	switch(i) {
-    		case 1-> e1.attendance(true);
-    		default-> e1.attendance(false);
-    		
+    	System.out.println("Is present? No/Yes (enter 0/1):");
+    	int isPresent = sc.nextInt();
+    	switch(isPresent) {
+    	case 1->e.attendance(true);
+    	default->e.attendance(false);
     	}
-    	e1.normalWorkDay=8;
-    	e1.calculateWage();
+
+    	System.out.println("Enter \n1.Part-time\n2.Full-time :");
+    	int empType = sc.nextInt();
     	
-    	Employee e2 = new Employee("Shyam", 124);
-    	e2.attendance(true);
-    	e2.normalWorkDay=4; //part-time employee wage is set to 4
+    	switch(empType) {
+    	case 1->e.normalWorkDay=4;
+    	default->e.normalWorkDay=8;
     	
-    	System.out.println("For Part-time: ");
-    	e2.calculateWage();
+    	}
+    	
+    	e.calculateWage();
     }
 }
