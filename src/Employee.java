@@ -1,9 +1,13 @@
+import java.util.Random;
+
 public class Employee{
 	String name;
 	int id;
 	boolean attendance=false;
-	int normalWorkDay;
-	int salPerHour=20;
+	static int normalWorkDay;
+	static int salPerHour=20;
+	int totalWage = 0; // Total monthly wage
+    int totalDaysPresent = 0; // Total days the employee was present
 	
 	
 	//added constructor to set employee name,id
@@ -12,24 +16,22 @@ public class Employee{
 		this.id=id;
 	}
 	
-	public int calculateWage(){
-		int dailySalary=0;
-		if(attendance) {
-			dailySalary=normalWorkDay*salPerHour;
-			//System.out.println("\nDaily Wage is: "+dailySalary);
-		}
-		else {
-			//System.out.println("\nEmployee absent, wage is 0");
-		}
-		return dailySalary;
-	}
-    public void attendance(boolean a) {
-    	if(a) {
-    		attendance=true;
-    		System.out.println(this.name+" is present");
-    	}
-    	else {
-    		System.out.println(this.name+" is absent");
-    	}
+	public static int calculateDailyWage() {
+        return normalWorkDay * salPerHour;
     }
-}
+	
+	public void countMonthlyWage() {
+	while(totalDaysPresent!=20) {
+		Random r=new Random();
+    	int i=(r.nextInt(1000))%2;	
+    	
+    	if(i==1) {
+    		this.totalDaysPresent++;
+    		this.totalWage+=calculateDailyWage();
+    	}
+    	i++;
+    	//System.out.println(this.totalDaysPresent);
+    }
+	}
+    	
+} 
